@@ -118,9 +118,20 @@ const makeCountDown = (from) => {
 };
 ```
 
-`makeCountDown` shows the general approach for creating a linked list - first, we create a node to hold some data, then we form the list by linking that node to another by updating their `next` reference. Visually:
+Let's call that function, and see what it returns:
 
-`10 -> 9 -> 8 -> 7 -> 6 -> 5 -> 4 -> 3 -> 2 -> 1`
+```js
+const list = makeCountDown(10);
+console.log("Countdown list", list);
+```
+
+`console.log("Countdown list", list)` produces the linked list shown in Figure 2.
+
+![](./assets/countdownLinkedList.png)
+
+_Figure 2: The countdown linked list_
+
+`makeCountDown` shows the general approach for creating a linked list - first, we create a node to hold some data, then we form the list by linking that node to another by updating their `next` reference.
 
 Now, if we want to print the list, we just need to traverse the _next_ references:
 
@@ -140,15 +151,19 @@ const printList = (head) => {
 }
 ```
 
+Visually, `printList(list)` does the following:
+
+`10 -> 9 -> 8 -> 7 -> 6 -> 5 -> 4 -> 3 -> 2 -> 1`
+
 Conceptually, that's all there is to linked lists! However, linked lists act as the foundation for more sophisticated data structures, such as stacks and queues, which can perform better than arrays when adding and deleting data. We'll look at stacks and queues, next.
 
 ## Stacks
 
-A stack is a _last in, first out_ (LIFO) data type that behaves similarly to a stack of plates (or the [The Tower of Hanoi](https://www.mathsisfun.com/games/towerofhanoi.html)), because, as shown in Figure 2, adding or removing is only possible at the top.
+A stack is a _last in, first out_ (LIFO) data type that behaves similarly to a stack of plates (or the [The Tower of Hanoi](https://www.mathsisfun.com/games/towerofhanoi.html)), because, as shown in Figure 3, adding or removing is only possible at the top.
 
 ![](assets/stack.png)
 
-_Figure 2: A stack_
+_Figure 3: A stack_
 
 A stack has two main operations:
 
@@ -166,11 +181,11 @@ And how about those forward and back buttons on your browser?
 
 ## Queues
 
-A queue is a _first in, first out_ (FIFO) data type that behaves similarly to your average post office, as shown in Figure 3 - if you join the queue first, you will be the first one to be served and leave the queue.
+A queue is a _first in, first out_ (FIFO) data type that behaves similarly to your average post office, as shown in Figure 4 - if you join the queue first, you will be the first one to be served and leave the queue.
 
 ![](./assets/queue.png)
 
-_Figure 3: A queue_
+_Figure 4: A queue_
 
 A queue has two main operations:
 
@@ -194,23 +209,23 @@ Below, you get to program stacks and queues.
 
 A tree is a collection of nodes connected by references ([edges](https://mathinsight.org/definition/network_edge), in maths terms).
 
-Figure 4 shows that we have been working with a tree data structure since day 1 of this course!
+Figure 5 shows that we have been working with a tree data structure since day 1 of this course!
 
 ![](./assets/DOMTree.png)
 
-_Figure 4: The DOM tree_
+_Figure 5: The DOM tree_
 
-A binary tree is a special kind of tree data structure, shown in Figure 5, in which each node has at most two children (the left child and the right child).
+A binary tree is a special kind of tree data structure, shown in Figure 6, in which each node has at most two children (the left child and the right child).
 
 ![](./assets/binaryTree.png)
 
-_Figure 5: A binary tree_
+_Figure 6: A binary tree_
 
-A binary Search tree, shown in Firgure 6, is a special kind of binary tree in which nodes that have lesser value are stored on the left child, while the nodes with a higher value are stored at the right child.
+A binary Search tree, shown in Firgure 7, is a special kind of binary tree in which nodes that have lesser value are stored on the left child, while the nodes with a higher value are stored at the right child.
 
 ![](assets/binarySearchTree.png)
 
-_Figure 6: A binary search tree_
+_Figure 7: A binary search tree_
 
 Hence, a binary search tree is also called an ordered or sorted binary tree, because it is a rooted binary tree data structure whereby each root node stores a key greater than all the keys in the node's left subtree and less than those in its right subtree.
 
